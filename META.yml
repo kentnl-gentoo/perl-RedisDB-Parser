@@ -11,6 +11,8 @@ dynamic_config: 1
 generated_by: 'ExtUtils::MakeMaker version 6.82, CPAN::Meta::Converter version 2.132830'
 keywords:
   - redis
+  - protocol
+  - parser
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -24,6 +26,7 @@ no_index:
     - README.pod
 requires:
   Encode: 2.1
+  RedisDB: 2.18
   Test::More: 0.94
   Try::Tiny: 0
   perl: 5.008004
@@ -32,6 +35,6 @@ resources:
   homepage: https://github.com/trinitum/perl-RedisDB-Parser
   license: http://dev.perl.org/licenses/
   repository: git://github.com/trinitum/perl-RedisDB-Parser
-version: 2.19_01
+version: 2.19_02
 x_contributors:
   - 'Pavel Shaydo <zwon@cpan.org>'
