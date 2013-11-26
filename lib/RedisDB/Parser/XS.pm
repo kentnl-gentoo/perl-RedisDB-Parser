@@ -1,7 +1,7 @@
 package RedisDB::Parser::XS;
 use strict;
 use warnings;
-our $VERSION = "2.19_02";
+our $VERSION = "2.19_03";
 my $XS_VERSION = $VERSION;
 $VERSION = eval $VERSION;
 
@@ -17,11 +17,15 @@ module directly. See details in L<RedisDB::Parser> documentation.
 =cut
 
 require XSLoader;
-XSLoader::load("RedisDB::Parser", $XS_VERSION);
+XSLoader::load( "RedisDB::Parser", $XS_VERSION );
 
 sub new {
-    my ($class, %params) = @_;
-    return _new($params{master}, $params{utf8} ? 1 : 0);
+    my ( $class, %params ) = @_;
+    return _new(
+        $params{master},
+        $params{error_class} || "RedisDB::Parser::Error",
+        $params{utf8} ? 1 : 0
+    );
 }
 
 1;
