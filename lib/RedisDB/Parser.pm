@@ -2,7 +2,7 @@ package RedisDB::Parser;
 
 use strict;
 use warnings;
-our $VERSION = "2.19_03";
+our $VERSION = "2.19_04";
 $VERSION = eval $VERSION;
 
 use Try::Tiny;
@@ -61,6 +61,13 @@ are no callbacks in queue, default_callback will be used.
 If this parameter is set all data will be encoded as UTF-8 when building
 requests, and decoded from UTF-8 when parsing replies. By default module
 expects all data to be octet sequences.
+
+=item B<error_class>
+
+If parsed message is an error message, parser will create object of the
+specified class with the message as the only constructor argument, and pass
+this object to the callback. By default L<RedisDB::Parser::Error> class is
+used.
 
 =back
 
