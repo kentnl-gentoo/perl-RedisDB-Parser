@@ -30,7 +30,9 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "0"
+            "Test::FailWarnings" : "0",
+            "Test::More" : "0.94",
+            "Test::Most" : "0.22"
          }
       },
       "configure" : {
@@ -42,7 +44,6 @@
       "runtime" : {
          "requires" : {
             "Encode" : "2.1",
-            "Test::More" : "0.94",
             "Try::Tiny" : "0",
             "perl" : "5.008004"
          }
@@ -61,7 +62,7 @@
          "url" : "git://github.com/trinitum/perl-RedisDB-Parser"
       }
    },
-   "version" : "2.19_04",
+   "version" : "2.19_05",
    "x_contributors" : [
       "Pavel Shaydo <zwon@cpan.org>"
    ]

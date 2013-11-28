@@ -3,7 +3,9 @@ abstract: 'Redis protocol parser'
 author:
   - 'Pavel Shaydo <zwon@cpan.org>'
 build_requires:
-  ExtUtils::MakeMaker: 0
+  Test::FailWarnings: 0
+  Test::More: 0.94
+  Test::Most: 0.22
 configure_requires:
   ExtUtils::CBuilder: 0.27
   ExtUtils::MakeMaker: 6.3002
@@ -26,7 +28,6 @@ no_index:
     - README.pod
 requires:
   Encode: 2.1
-  Test::More: 0.94
   Try::Tiny: 0
   perl: 5.008004
 resources:
@@ -34,6 +35,6 @@ resources:
   homepage: https://github.com/trinitum/perl-RedisDB-Parser
   license: http://dev.perl.org/licenses/
   repository: git://github.com/trinitum/perl-RedisDB-Parser
-version: 2.19_04
+version: 2.19_05
 x_contributors:
   - 'Pavel Shaydo <zwon@cpan.org>'
