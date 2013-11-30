@@ -62,7 +62,7 @@
          "url" : "git://github.com/trinitum/perl-RedisDB-Parser"
       }
    },
-   "version" : "2.19_05",
+   "version" : "2.19_06",
    "x_contributors" : [
       "Pavel Shaydo <zwon@cpan.org>"
    ]
