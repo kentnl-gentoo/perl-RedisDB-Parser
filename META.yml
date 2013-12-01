@@ -35,6 +35,6 @@ resources:
   homepage: https://github.com/trinitum/perl-RedisDB-Parser
   license: http://dev.perl.org/licenses/
   repository: git://github.com/trinitum/perl-RedisDB-Parser
-version: 2.19_06
+version: 2.20
 x_contributors:
   - 'Pavel Shaydo <zwon@cpan.org>'
