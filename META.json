@@ -4,7 +4,7 @@
       "Pavel Shaydo <zwon@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.82, CPAN::Meta::Converter version 2.132830",
+   "generated_by" : "ExtUtils::MakeMaker version 6.98, CPAN::Meta::Converter version 2.143240",
    "keywords" : [
       "redis",
       "protocol",
@@ -62,7 +62,7 @@
          "url" : "git://github.com/trinitum/perl-RedisDB-Parser"
       }
    },
-   "version" : "2.20",
+   "version" : "2.21",
    "x_contributors" : [
       "Pavel Shaydo <zwon@cpan.org>"
    ]

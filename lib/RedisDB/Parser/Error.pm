@@ -2,7 +2,7 @@ package RedisDB::Parser::Error;
 
 use strict;
 use warnings;
-our $VERSION = "2.20";
+our $VERSION = "2.21";
 $VERSION = eval $VERSION;
 
 =head1 NAME
@@ -39,6 +39,12 @@ Create new error object with specified error message.
 
 sub new {
     my ( $class, $message ) = @_;
+    if ( $message =~ /^MOVED / ) {
+        return "${class}::MOVED"->new($message);
+    }
+    elsif ( $message =~ /^ASK / ) {
+        return "${class}::ASK"->new($message);
+    }
     return bless { message => $message }, $class;
 }
 
@@ -51,6 +57,26 @@ Return error message. Also you can just use object in string context.
 sub as_string {
     return shift->{message};
 }
+
+package RedisDB::Parser::Error::MOVED;
+use strict;
+use warnings;
+our @ISA = qw(RedisDB::Parser::Error);
+
+sub new {
+    my ( $class, $message ) = @_;
+    my ( $type, $slot, $host, $port ) =
+      ( $message =~ /^(MOVED|ASK) \s ([0-9]+) \s ([0-9.]+):([0-9]+)$/x );
+    return bless {
+        slot    => $slot,
+        host    => $host,
+        port    => $port,
+        message => $message,
+    }, $class;
+}
+
+package RedisDB::Parser::Error::ASK;
+our @ISA = qw(RedisDB::Parser::Error::MOVED);
 
 1;
 
@@ -66,7 +92,7 @@ Pavel Shaydo, C<< <zwon at cpan.org> >>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2011-2013 Pavel Shaydo.
+Copyright 2011-2015 Pavel Shaydo.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published
