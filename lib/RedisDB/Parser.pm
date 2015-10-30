@@ -2,7 +2,7 @@ package RedisDB::Parser;
 
 use strict;
 use warnings;
-our $VERSION = "2.21";
+our $VERSION = "2.22";
 $VERSION = eval $VERSION;
 
 use Try::Tiny;
@@ -117,6 +117,8 @@ Process new data received from the server. For every new reply method will
 invoke callback, either the one from the queue that was added using
 I<push_callback> method, or default callback if the queue is empty. Callback
 passed two arguments: master value, and decoded reply from the server.
+
+Method returns the number of parsed replies.
 
 =cut
 
